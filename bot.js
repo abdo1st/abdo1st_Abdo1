@@ -273,7 +273,7 @@ function play(guild, song) {
 
 
 
-wellcome
+
 client.on('guildMemberAdd', member => {
     var embed = new Discord.RichEmbed()
     .setAuthor(member.user.username, member.user.avatarURL)
@@ -289,7 +289,7 @@ if (!channel) return;
 channel.send({embed : embed});
 });
 
-quit
+
 
 client.on('guildMemberRemove', member => {
     var embed = new Discord.RichEmbed()
@@ -325,7 +325,6 @@ channel.send({embed : embed});
 
 
 
-القرعة
 client.on('message', function(message) {
     if(message.content.startsWith(prefix + 'قرعة')) {
         let args = message.content.split(" ").slice(1);
@@ -353,7 +352,6 @@ client.on('message', function(message) {
 
 
 
-النشر منع
 client.on('message', message => {
     var args = message.content.split(/[ ]+/)
     if(message.content.includes('discord.gg')){
@@ -387,7 +385,7 @@ client.on('message', message => {
 
 
 
-برودكاست
+
 client.on('message', message => {
     if (message.author.id === client.user.id) return;
     if (message.guild) {
@@ -424,7 +422,7 @@ return;
 
 
 
-بوت محادثة
+
 client.on('message', message => {
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return;
@@ -465,7 +463,7 @@ client.on('message', message => {
 
 
 
-بالخاص الترحيب
+
 client.on("guildMemberAdd", member => {
   member.createDM().then(function (channel) {
   return channel.send(`:rose:  ولكم نورت السيرفر:rose: 
@@ -498,7 +496,7 @@ client.on("guildMemberAdd", member => {
 
 
 
-شكر رسالة
+
 client.on('guildCreate', guild => {
   var embed = new Discord.RichEmbed()
   .setColor(0x5500ff)
@@ -531,7 +529,7 @@ client.on('guildCreate', guild => {
 
 
 
-البروفايل صورة
+
 client.on('message', message =>{
     let args = message.content.split(' ');
     let prefix = '$'; //تقدر تغير البرفكس
@@ -580,7 +578,7 @@ client.on('message', message =>{
 
 
 
-بوت خاص
+
 client.on("message", (message) => {
             if (message.channel.type === "dm") {
         if (message.author.id === client.user.id) return;
@@ -621,7 +619,7 @@ client.on("message", (message) => {
 
 
 
-الاشخاص تعريف
+
  client.on('message', message => {
     var prefix = "$"
 var args = message.content.split(" ").slice(1);    
@@ -698,7 +696,7 @@ message.channel.send({embed});
 
 
 
-البوت فتح
+
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
@@ -740,7 +738,7 @@ client.user.setGame(`Nothing`,"http://twitch.tv/S-F")
 
 
 
-
+client.login(process.env.BOT_TOKEN);
 
 
 
