@@ -499,7 +499,7 @@ client.on('guildCreate', guild => {
 });
 
 
-
+guild
 
 
 
@@ -629,6 +629,42 @@ return;
         return;
     }
 });
+
+
+
+
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('discord.gg')){
+        message.delete()
+      message.channel.sendMessage("", {embed: {
+        title: "لا تنشر",
+        color: 0x06DF00,
+        description: "يمنع النشر في هذا السيرفر",
+        footer: {
+          text: "By Abdo1#4651"
+        }
+      }}).then(msg => {msg.delete(3000)});
+                          }
+
+     
+}); 
+
+
+client.on('message', message => {
+    var args1 = message.content.split(' ').slice(1).join(' ');
+    if(message.content.startsWith(prefix + 'cl')) {
+        if(message.author.bot) return;
+        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply('**أنت لا تمتلك الصلاحية لهذا الامر**');
+        if(args1 > 100) return message.reply('**الرجاء اختيار رقم من 2 الى 100**').then(msg => msg.delete(3000));
+        if(args1 < 2) return message.reply('**الرجاء اختيار رقم من 2 الى 100**').then(msg => msg.delete(3000));
+        if(isNaN(args1)) return message.reply('**الرجاء اختيار رقم من 2 الى 100**').then(msg => msg.delete(3000));
+        
+        message.channel.bulkDelete(args1);
+        message.reply(`**( ${args1} ) عدد الرسائل التي تم مسحها**`).then(m => m.delete(3000));
+    }
+});
+
 
 
 
