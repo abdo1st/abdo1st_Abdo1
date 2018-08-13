@@ -22,7 +22,7 @@ const client = new Discord.Client({disableEveryone: true}); //نزل كل الب
 //
 ///
 
-const prefix = '!!'; //حط البرفكس اللي تبيه
+const prefix = '$'; //حط البرفكس اللي تبيه
 //توكن بوتك لا تنسى تحطه باخر سطر
 client.on('ready', function() {
     console.log(`${client.user.username} is running...`);
