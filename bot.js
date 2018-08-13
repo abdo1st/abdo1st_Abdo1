@@ -499,7 +499,7 @@ client.on('guildCreate', guild => {
 });
 
 
-guild
+
 
 
 
