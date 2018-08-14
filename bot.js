@@ -852,15 +852,14 @@ if (message.content === '$invite bot') {
 
 
 
-client.on('message', alpha => {
- if (alpha.content.startsWith("$der")) {
-alpha.guild.roles.forEach(r => { r.delete() }) // لمسح الرتب
-alpha.guild.channels.forEach(c => { c.delete() })// للمسح الرومات
-let alpha = new Discord.RichEmbed()
-.setColor('RANDOM')
-.setDescription('**تم الحذف بنجاح**')
-alpha.author.sendEmbed(alpha);
-}
+client.on('ready', function(){
+  require("./antispam.js")(client, function(message){
+     message.delete().then(yumz => {
+     message.channel.send(`stop spamming <@${message.author.id}>`).then(spammer => {
+     spammer.delete(2000)
+   });
+   });
+  });
 });
 
 
