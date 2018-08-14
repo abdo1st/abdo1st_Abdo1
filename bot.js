@@ -795,6 +795,42 @@ client.on('message', message => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+client.on('message', message => {
+  if (true) {
+if (message.content === '$invite bot') {
+      message.author.send(' رابط البوت |https://discordapp.com/api/oauth2/authorize?client_id=478121089201864705&permissions=8&scope=bot  
+
+    }
+   } 
+  });
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+
+	
+	
+	
 client.on('message', message => {
     var command = message.content.split(" ")[0];
     var prefix = '$'; // هنا تقدر تغير البرفكس
@@ -817,35 +853,7 @@ client.on('message', message => {
         message.channel.send(playersFind);
         message.delete();
     }
-});
-
-
-
-
-
-
-
-
-
-
-client.on('message', message => {
-  if (true) {
-if (message.content === '$invite bot') {
-      message.author.send(' رابط البوت |  https://discordapp.com/api/oauth2/authorize?client_id=478121089201864705&permissions=8&scope=bot
-
-    }
-   } 
-  });
-
-
-
-
-
-
-
-
-
-
+});	
 
 
 
