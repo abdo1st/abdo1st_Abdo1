@@ -831,7 +831,7 @@ client.on('message', message => {
 client.on('message', message => {
   if (true) {
 if (message.content === '$invite bot') {
-      message.author.send(' رابط البوت |  https://discordapp.com/api/oauth2/authorize?client_id=469548363399036946&permissions=2146958583&scope=bot ').catch(e => console.log(e.stack));
+      message.author.send(' رابط البوت |  https://discordapp.com/api/oauth2/authorize?client_id=478121089201864705&permissions=8&scope=bot
 
     }
    } 
