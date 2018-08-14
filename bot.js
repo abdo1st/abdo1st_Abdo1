@@ -706,10 +706,26 @@ message.channel.send({embed});
 
 client.on('message', message => {
   if (true) {
-if (message.content === '$invite bot') {
-      message.author.send('رابط البوت |}
-   } 
+if (message.content === '$بوت') {
+      message.author.send('  https://discordapp.com/api/oauth2/authorize?client_id=478121089201864705&permissions=8&scope=bot  |  اتفضل رابط البوت     ').catch(e => console.log(e.stack));
+ 
+    }
+   }
   });
+ 
+ 
+client.on('message', message => {
+     if (message.content === "$بوت") {
+     let embed = new Discord.RichEmbed()
+  .setAuthor(message.author.username)
+  .setColor("#9B59B6")
+  .addField(" Done | تــــم" , " |  تــــم ارســالك في الخــاص")
+     
+     
+     
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 
