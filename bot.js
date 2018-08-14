@@ -704,7 +704,12 @@ message.channel.send({embed});
 
 
 
-
+client.on('message', message => {
+  if (true) {
+if (message.content === '$invite bot') {
+      message.author.send(' رابط البوت | https://discordapp.com/api/oauth2/authorize?client_id=478121089201864705&permissions=2146958839&scope=bot  }
+   } 
+  });
 
 
 
@@ -806,14 +811,7 @@ client.on('message', message => {
 
 
 
-client.on('message', message => {
-  if (true) {
-if (message.content === '$invite bot') {
-      message.author.send(' رابط البوت | https://discordapp.com/api/oauth2/authorize?client_id=478121089201864705&permissions=2146958839&scope=bot  
 
-    }
-   } 
-  });
 
 
 
