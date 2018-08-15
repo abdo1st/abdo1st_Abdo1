@@ -439,7 +439,7 @@ client.on('message', message => {
   
     if (command == "say") {
         if(!message.member.hasPermission("VIEW_AUDIT_LOG")) return message.reply("لا يوجد لديك صلاحية");
-        message.channel.sendMessage(args.join("  "))
+        message.replayMessage(args.join("  "))
         message.delete()
        }
 });
