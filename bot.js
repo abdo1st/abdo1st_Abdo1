@@ -476,22 +476,6 @@ client.on("guildMemberAdd", member => {
 
 
 
-client.on('message', message => {
-    if (message.author.bot) return;
-    if (!message.content.startsWith(prefix)) return;
-  
-    let command = message.content.split(" ")[0];
-    command = command.slice(prefix.length);
-  
-    let args = message.content.split(" ").slice(1);
-  
-    if (command == "say") {
-        if(!message.member.hasPermission("VIEW_AUDIT_LOG")) return message.reply("لا يوجد لديك صلاحية");
-         message.delete()
-        message.channel.send(`<@${message.author.id}> ${args} `)
-       
-       }
-});
 
 
 
@@ -916,7 +900,22 @@ client.on('message', msg => {
 
 
 
-
+client.on('message', message => {
+    if (message.author.bot) return;
+    if (!message.content.startsWith(prefix)) return;
+  
+    let command = message.content.split(" ")[0];
+    command = command.slice(prefix.length);
+  
+    let args = message.content.split(" ").slice(1);
+  
+    if (command == "say") {
+        if(!message.member.hasPermission("VIEW_AUDIT_LOG")) return message.reply("لا يوجد لديك صلاحية");
+         message.delete()
+        message.channel.send(`@everyone  ${args} `)
+       
+       }
+});
 
 
 
