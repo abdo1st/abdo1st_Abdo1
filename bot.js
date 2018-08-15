@@ -792,52 +792,6 @@ client.user.setGame(`! Omar Yehia ツ#3489`,"http://twitch.tv/S-F")
 
 
 
-client.on('message', message => {
-    var args1 = message.content.split(' ').slice(1).join(' ');
-    if(message.content.startsWith(prefix + 'clear')) {
-        if(message.author.bot) return;
-        if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply('**أنت لا تمتلك الصلاحية لهذا الامر**');
-        if(args1 > 100) return message.reply('**الرجاء اختيار رقم من 2 الى 100**').then(msg => msg.delete(3000));
-        if(args1 < 2) return message.reply('**الرجاء اختيار رقم من 2 الى 100**').then(msg => msg.delete(3000));
-        if(isNaN(args1)) return message.reply('**الرجاء اختيار رقم من 2 الى 100**').then(msg => msg.delete(3000));
-        
-        message.channel.bulkDelete(args1);
-        message.reply(`**( ${args1} ) عدد الرسائل التي تم مسحها**`).then(m => m.delete(3000));
-    }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	
 	
 	
@@ -881,7 +835,7 @@ client.on('message', msg => {
   command = command.slice(prefix.length);
   let args = msg.content.split(" ").slice(1);
 
-    if(command === "clea") {
+    if(command === "مسح") {
         const emoji = client.emojis.find("name", "wastebasket")
     let textxt = args.slice(0).join("");
     if(msg.member.hasPermission("MANAGE_MESSAGES")) {
@@ -900,22 +854,37 @@ client.on('message', msg => {
 
 
 
-client.on('message', message => {
-    if (message.author.bot) return;
-    if (!message.content.startsWith(prefix)) return;
-  
-    let command = message.content.split(" ")[0];
-    command = command.slice(prefix.length);
-  
-    let args = message.content.split(" ").slice(1);
-  
-    if (command == "say") {
-        if(!message.member.hasPermission("VIEW_AUDIT_LOG")) return message.reply("لا يوجد لديك صلاحية");
-         message.delete()
-        message.channel.send(`@everyone  ${args} `)
-       
-       }
+
+
+
+
+
+
+client.on('message' , async (message) => {
+ if (message.content.startsWith(prefix + 'say')) {
+  const args = message.content.substring(prefix.length).split(' ');
+
+ message.delete();
+args.shift() 
+let msg = args.join(' ') 
+message.channel.createWebhook(message.author.username, message.author.avatarURL) 
+    .then(wb => {
+        const user = new Discord.WebhookClient(wb.id, wb.token) 
+        user.send(msg); 
+        user.delete() 
+    })
+    .catch(console.error)
+ }
 });
+
+
+
+
+
+
+
+
+
 
 
 
