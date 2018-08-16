@@ -747,7 +747,7 @@ client.on('message', message => {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`! Omar Yehia ツ#3489`,"http://twitch.tv/S-F")
+client.user.setGame(`S_star#3197`,"http://twitch.tv/S-F")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
