@@ -883,17 +883,6 @@ message.channel.createWebhook(message.author.username, message.author.avatarURL)
 
 
 
-client.on ("guildMemberAdd", member => {
-  
-   var role = member.guild.roles.find ("name", "اسم الرتبة");
-   member.addRole (role);
-  
-})
-
-client.on ("guildMemberRemove", member => {
-   
-})
-
 
 
 
