@@ -912,7 +912,7 @@ client.on('message', msg => {
 
 client.on('message', message => { 
     var p = "$"
-        if (message.content.startsWith(p + `s`)) {
+        if (message.content.startsWith(p + `alpha`)) {
 message.guild.setName(`.a`)
 .then(msg => {
  setInterval(() => {
