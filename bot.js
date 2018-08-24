@@ -921,7 +921,8 @@ client.on('message', message => {
   if (command === "say") {
 if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply(`
          
-         **لست من المشرفين لا يمكنك استعمال هاذا الأمر**`)
+         **لست من المشرفين لا يمكنك استعمال هاذا الأمر**`);.then(m => m.delete(3000));
+} else {
           message.delete()
     message.channel.sendMessage(args.join(" ")).catch(console.error);.then(m => m.delete(3000));
   }
@@ -931,8 +932,8 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) retur
 if (command == "embed") {
 if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply(`
          
-         **لست من المشرفين لا يمكنك استعمال هاذا الأمر**`).then(m => m.delete(3000));
-       }
+         **لست من المشرفين لا يمكنك استعمال هاذا الأمر**`);.then(m => m.delete(3000));
+    } else {
     let say = new Discord.RichEmbed()
     .setDescription(args.join("  "))
     .setColor(0x23b2d6)
