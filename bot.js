@@ -1011,7 +1011,7 @@ client.on("message", async message => {
 
 
 
-    if(cmd === `${prefix}kick`){
+    if(cmd === `${prefix}طرد`){
 
 
 
@@ -1022,15 +1022,15 @@ client.on("message", async message => {
       if(kUser.hasPermission("MANAGE_CHANNELS")) return message.channel.send("ما تقدر تسوي كيك للأدمين")
 
       let kickEmbed = new Discord.RichEmbed()
-      .setDescription("~Kick~")
+      .setDescription("طرد")
       .setColor("#e56b00")
-      .addField("Kicked User", `${kUser} with ID ${kUser.id}`)
-      .addField("Kicked By", `<@${message.author.id}> with the id ${message.author.id}`)
-      .addField("Kicked In", message.channel)
-      .addField("Time", message.createdAt)
-      .addField("Reason", kReason);
+      .addField("تم طرد", `${kUser} with ID ${kUser.id}`)
+      .addField("تم الطرد من قبل", `<@${message.author.id}> with the id ${message.author.id}`)
+      .addField("تم الطرد في", message.channel)
+      .addField("الوقت", message.createdAt)
+      .addField("السبب", kReason);
 
-      let kickChannel = message.guild.channels.find('name', 'kick-ban');
+      let kickChannel = message.guild.channels.find('name', 'log');
       if(!kickChannel) return message.channel.send("لم اجد روم ال kick-ban");
 
       message.guild.member(kUser).kick(kReason)
