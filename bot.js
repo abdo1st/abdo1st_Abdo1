@@ -1022,7 +1022,7 @@ client.on("message", async message => {
       if(kUser.hasPermission("MANAGE_CHANNELS")) return message.channel.send("ما تقدر تسوي كيك للأدمين")
 
       let kickEmbed = new Discord.RichEmbed()
-      .setDescription("طرد")
+      .setDescription("k")
       .setColor("#e56b00")
       .addField("تم طرد", `${kUser} with ID ${kUser.id}`)
       .addField("تم الطرد من قبل", `<@${message.author.id}> with the id ${message.author.id}`)
