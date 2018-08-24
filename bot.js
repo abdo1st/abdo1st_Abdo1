@@ -919,7 +919,6 @@ client.on('message', msg => {
 
 
 
-
 client.on('message', message => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
@@ -931,6 +930,10 @@ client.on('message', message => {
 
 // -say
   if (command === "say") {
+if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply(`
+         
+         **لست من المشرفين لا يمكنك استعمال هاذا الأمر**
+         `);
           message.delete()
     message.channel.sendMessage(args.join(" ")).catch(console.error);
   }
@@ -938,6 +941,11 @@ client.on('message', message => {
  
 
 if (command == "embed") {
+if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply(`
+         
+         **لست من المشرفين لا يمكنك استعمال هاذا الأمر**
+         `);
+
     let say = new Discord.RichEmbed()
     .setDescription(args.join("  "))
     .setColor(0x23b2d6)
