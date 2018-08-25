@@ -10,8 +10,6 @@ const YouTube = require('simple-youtube-api');//npm i simple-youtube-api
 
 const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8"); //ما تغير هذا 
 
-const moment = require('moment');
-
 const queue = new Map();
 
 const ytdl = require('ytdl-core'); //npm i ytdl-core
@@ -1098,7 +1096,7 @@ client.on("message", async message => {
 
 
 
-
+ const moment = require('moment');
  var filter = m => m.author.id === message.author.id;
   if(message.content.startsWith(prefix + "giveaway")) {
 
@@ -1163,6 +1161,7 @@ client.on("message", async message => {
     });
   }
 });
+
 
 
 
