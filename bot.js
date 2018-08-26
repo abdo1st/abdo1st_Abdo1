@@ -355,19 +355,11 @@ client.on('message', function(message) {
 client.on('message', message => {
     var args = message.content.split(/[ ]+/)
     if(message.content.includes('discord.gg')){
+      if(!message.member.hasPermission('ADMINISTRATOR'))
         message.delete()
-      message.channel.sendMessage("", {embed: {
-        title: "لا تنشر",
-        color: 0x06DF00,
-        description: "يمنع النشر في هذا السيرفر",
-        footer: {
-          text: "By Abdo1#4651"
-        }
-      }}).then(msg => {msg.delete(3000)});
-                          }
-
-     
-}); 
+    return message.reply(`** يمنع النشر في هذا السيرفر :angry: ! **`)
+    }
+});
 
 
 
