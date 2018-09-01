@@ -1403,8 +1403,6 @@ const bannedwords = [
   "G.stop",
   "G.skip",
   "-skip"
-  "$play"
-  "!play"
 ]
 client.on('message', message => {
   var Muted = message.guild.roles.find("name", "muted");
