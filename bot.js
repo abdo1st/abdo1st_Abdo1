@@ -1326,11 +1326,65 @@ hours = 12;
 
 
 
+client.on('message', message => {
+     if (message.content === "$ping") {
+      const embed = new Discord.RichEmbed()
+
+  .setColor("#FF0000")
+  .addField('``سرعة أتصال الــبوت`` ' , `${Date.now() - message.createdTimestamp}` + ' ms`')
+                 .setFooter(` BlueBot
+ .`, 'صورة بوتك.jpg')
+
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 
+client.on('message', message => {
+    if (message.author.bot) return;
+     if (message.content === prefix + "help") {
+         message.channel.send('**The Message Was Sent On Private**');
+            
+    
+         
 
 
+ message.author.sendMessage(`
+ **
+╔[❖════════════❖]╗
+             Prefix = ' ! '
+╚[❖════════════❖]╝
+
+╔[❖════════════❖]╗
+            الاوامر العامة
+╚[❖════════════❖]╝
+
+
+❖ !members ➾ معلومات الاعضاء
+
+❖ !bc ➾ لإرسال رسالة لجميع الاعضاء
+
+❖ !ping ➾ لمعرفة سرعة الاتصال
+
+❖ !avatar ➾ لعرض صورة الحساب
+
+❖ !id ➾ معلومات حسابك
+
+╔[❖════════════❖]╗
+            اوامر الاغاني
+╚[❖════════════❖]╝
+
+❖ !play ➾ لتشغيل الاغنية 
+
+❖ !stop ➾ لإيقاف الاغنية
+
+==================================================================
+
+`);
+
+    }
+});
 
 
 
