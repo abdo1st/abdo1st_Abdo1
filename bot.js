@@ -1479,27 +1479,6 @@ const bannedwords = [
   "G.skip",
   "-skip"
 
-]
-client.on('message', message => {
-  var Muted = message.guild.roles.find("name", "Muted");
-  var warn = message.guild.roles.find("name", "warn");
-  if(bannedwords.some(word => message.content.includes(word))) {
-  if(message.channel.id !== '465151555759243264') return;
-  if (message.author.bot) return;
-  if(message.member.roles.has(warn)) return;
-  if(!message.member.roles.has(warn.id)) {
-  message.member.addRole(warn)
-  message.reply("**`تم اعطائك تحذير لاستخدام اوامر البوت او الفاظ نابية فى الشات العام` 😠**")
-  }
-  if(message.member.roles.has(warn.id)) {
-      message.member.addRole(Muted)
-      message.member.removeRole(warn)
-      message.reply("**`تم اعطائك ميوت كتابى تواصل مع احد اعضاء الادارة لازالتة` 🤐**")
-  }
-  }
-  })
-
-
 
 client.login(process.env.BOT_TOKEN);
 
