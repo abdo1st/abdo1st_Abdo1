@@ -1482,7 +1482,7 @@ const bannedwords = [
 ]
 client.on('message', message => {
   var Muted = message.guild.roles.find("name", "Muted");
-  var warn = message.guild.roles.find("name", "تحذير");
+  var warn = message.guild.roles.find("name", "warn");
   if(bannedwords.some(word => message.content.includes(word))) {
   if(message.channel.id !== '465151555759243264') return;
   if (message.author.bot) return;
