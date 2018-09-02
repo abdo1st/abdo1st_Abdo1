@@ -1404,51 +1404,7 @@ client.on ("guildMemberRemove", member => {
 
 
 
-const bannedwords = [
-  "#credit",
-  "#profile",
-  "#rep",
-  "#top",
-  "%level",
-  "%تقديم",
-  "احا",
-  "كلب",
-  "-play",
-  "-stop",
-  "-p",
-  "-s",
-  "!invites",
-  "!top",
-  "G.play",
-  "G.stop",
-  "كسمك",
-  "خول",
-  "متناك",
-  "$play",
-  "$help",
-  "يعرص",
-  "G.skip",
-  "-skip"
 
-]
-client.on('message', message => {
-  var Muted = message.guild.roles.find("name", "muted");
-  var warn = message.guild.roles.find("name", "تحذير");
-  if(bannedwords.some(word => message.content.includes(word))) {
-  if(message.channel.id !== '482328459503206431') return;
-  if (message.author.bot) return;
-  if(message.member.roles.has(warn)) return;
-  if(!message.member.roles.has(warn.id)) {
-  message.member.addRole(warn)
-  message.reply("**`تم اعطائك تحذير لاستخدام اوامر البوت او الفاظ نابية فى الشات العام` 😠**")
-  }
-  if(message.member.roles.has(warn.id)) {
-      message.member.addRole(Muted)
-      message.member.removeRole(warn)
-      message.reply("**`تم اعطائك ميوت كتابى تواصل مع احد اعضاء الادارة لازالتة` 🤐**")
-  }
-  }
-  })
 
 
 
