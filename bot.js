@@ -1453,33 +1453,6 @@ client.on('message', message => {
 
 
 
-const bannedwords = [
-  "#credit",
-  "#profile",
-  "#rep",
-  "#top",
-  "%level",
-  "%تقديم",
-  "احا",
-  "كلب",
-  "-play",
-  "-stop",
-  "-p",
-  "-s",
-  "!invites",
-  "!top",
-  "G.play",
-  "G.stop",
-  "كسمك",
-  "خول",
-  "متناك",
-  "$play",
-  "$help",
-  "يعرص",
-  "G.skip",
-  "-skip"
-
-
 client.login(process.env.BOT_TOKEN);
 
 
