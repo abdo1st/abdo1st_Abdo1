@@ -1484,7 +1484,7 @@ client.on('message', message => {
   var Muted = message.guild.roles.find("name", "muted");
   var warn = message.guild.roles.find("name", "تحذير");
   if(bannedwords.some(word => message.content.includes(word))) {
-  if(message.channel.id !== '482328459503206431') return;
+  if(message.channel.id !== '465151555759243264') return;
   if (message.author.bot) return;
   if(message.member.roles.has(warn)) return;
   if(!message.member.roles.has(warn.id)) {
