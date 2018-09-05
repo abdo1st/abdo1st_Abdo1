@@ -694,7 +694,7 @@ client.on("message", (message) => {
  client.on('message', message => {
     var prefix = "$"
 var args = message.content.split(" ").slice(1);    
-if(message.content.startsWith(prefix + 'id')) {
+if(message.content.startsWith(prefix + 'معلومات حسابي')) {
 var year = message.author.createdAt.getFullYear()
 var month = message.author.createdAt.getMonth()
 var day = message.author.createdAt.getDate()
@@ -1356,25 +1356,13 @@ hours = 12;
 
 
 
-client.on('message', message => {
-     if (message.content === "$ping") {
-      const embed = new Discord.RichEmbed()
-
-  .setColor("#FF0000")
-  .addField('``سرعة أتصال الــبوت`` ' , `${Date.now() - message.createdTimestamp}` + ' ms`')
-                 .setFooter(` BlueBot
- .`, 'صورة بوتك.jpg')
-
-  message.channel.sendEmbed(embed);
-    }
-});
 
 
 
 client.on('message', message => {
     if (message.author.bot) return;
      if (message.content === prefix + "help") {
-         message.channel.send('**The Message Was Sent On Private**');
+         message.channel.send('**تم ارسال الرسالة بالخاص**');
             
     
          
@@ -1383,31 +1371,37 @@ client.on('message', message => {
  message.author.sendMessage(`
  **
 ╔[❖════════════❖]╗
-             Prefix = ' ! '
+             Prefix = ' $ '
 ╚[❖════════════❖]╝
 
 ╔[❖════════════❖]╗
-            الاوامر العامة
+            الأوامر العامة
 ╚[❖════════════❖]╝
 
 
-❖ !members ➾ معلومات الاعضاء
+❖ $معلومات عن اعضاء السيرفر   ➾ الاعضاء
 
-❖ !bc ➾ لإرسال رسالة لجميع الاعضاء
+❖ $من اجل سحب قرعة ➾ قرعة
 
-❖ !ping ➾ لمعرفة سرعة الاتصال
+❖ $من اجل معلومات حسابك ➾ معلومات الحساب
 
-❖ !avatar ➾ لعرض صورة الحساب
-
-❖ !id ➾ معلومات حسابك
+❖ $من اجل ادخال البوت بسيرفرك ➾ بوت
 
 ╔[❖════════════❖]╗
-            اوامر الاغاني
+            اوامر المقاطع الصوتية
 ╚[❖════════════❖]╝
 
-❖ $play ➾ لتشغيل الاغنية 
+❖ $play ➾ لتشغيل المقطع الصوتي 
 
-❖ $stop ➾ لإيقاف الاغنية
+❖ $queue ➾ لمعرفة اسم المقطع الصوتي المشغل 
+
+❖ $resume ➾ لأستناف المقطع الصوتي
+
+❖ $pause ➾ لإيقاف المقطع الصوتي مؤقتاً
+
+❖ $vol ➾ لتقليل الصوت او رفع الصوت 
+
+❖ $stop ➾ لإيقاف المقطع الصوتي
 
 ==================================================================
 
