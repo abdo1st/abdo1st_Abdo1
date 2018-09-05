@@ -580,7 +580,7 @@ client.on('message', message =>{
     let args = message.content.split(' ');
     let prefix = '$'; //تقدر تغير البرفكس
     
-    if(args[0] === `${prefix}avatar`){
+    if(args[0] === `${prefix}الصورة الشخصية`){
         let mentions = message.mentions.members.first()
         if(!mentions) {
           let sicon = message.author.avatarURL
@@ -684,17 +684,10 @@ client.on("message", (message) => {
 
 
 
-
-
-
-
-
-
-
  client.on('message', message => {
     var prefix = "$"
 var args = message.content.split(" ").slice(1);    
-if(message.content.startsWith(prefix + 'معلومات حسابي')) {
+if(message.content.startsWith(prefix + 'id')) {
 var year = message.author.createdAt.getFullYear()
 var month = message.author.createdAt.getMonth()
 var day = message.author.createdAt.getDate()
@@ -724,9 +717,10 @@ var w = 'عضو';
 let embed = new Discord.RichEmbed()
 .setColor("#502faf")
 .addField('🔱| اسمك:',`**<@` + `${z.id}` + `>**`, true)
+.addField('🛡| ايدي:', "**"+ `${z.id}` +"**",true)
 .addField('♨| Playing:','**'+y+'**' , true)
 .addField('🤖| نوع حسابك:',"**"+ w + "**",true)    
-.addField(':1234:| الكود الخاص بحسابك:',"#" +  `${z.discriminator}`,true)
+.addField('📛| الكود حق حسابك:',"**#" +  `${z.discriminator}**`,true)
 .addField('**التاريح الذي انشئ فيه حسابك | 📆 **: ' ,year + "-"+ month +"-"+ day)    
 .addField("**تاريخ دخولك للسيرفر| ⌚   :**", message.member.joinedAt.toLocaleString())    
 
@@ -742,6 +736,12 @@ message.channel.send({embed});
 }
 
 });
+
+
+
+
+
+
 
 
 
@@ -1383,7 +1383,7 @@ client.on('message', message => {
 
 ❖ $من اجل سحب قرعة ➾ قرعة
 
-❖ $من اجل معلومات حسابك ➾ معلومات الحساب
+❖ $id  ➾ من اجل معلومات حسابك 
 
 ❖ $من اجل ادخال البوت بسيرفرك ➾ بوت
 
