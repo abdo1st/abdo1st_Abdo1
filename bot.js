@@ -1259,17 +1259,26 @@ client.on('voiceStateUpdate', (oldM, newM) => {
 
 
 
-client.on("message", (message) => {
-    if (message.content.startsWith('$del')) {
-        if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
-
-        let args = message.content.split(' ').slice(1);
-        let channel = message.client.channels.find('name', args.join(' '));
-        if (!channel) return message.reply('**There is no room like this name -_-**').catch(console.error);
-        channel.delete()
-    }
+client.on('message', alpha => {
+var prefix = "$";
+if(alpha.content.split(' ')[0] == prefix + 'dc') {  // delete all channels
+if (!alpha.channel.guild) return;
+if(!alpha.guild.member(alpha.author).hasPermission("MANAGE_CHANNELS")) return alpha.reply("**You Don't Have ` MANAGE_CHANNELS ` Permission**");
+if(!alpha.guild.member(client.user).hasPermission("MANAGE_CHANNELS")) return alpha.reply("**I Don't Have ` MANAGE_CHANNELS ` Permission**");
+alpha.guild.channels.forEach(m => {
+m.delete();
+});// ALPHA Codes
+}// ALPHA Codes
+if(alpha.content.split(' ')[0] == prefix + 'dr') { // delete all roles
+if (!alpha.channel.guild) return;
+if(!alpha.guild.member(alpha.author).hasPermission("MANAGE_ROLES_OR_PERMISSIONS")) return alpha.reply("**You Don't Have ` MANAGE_ROLES_OR_PERMISSIONS ` Permission**");
+if(!alpha.guild.member(client.user).hasPermission("MANAGE_ROLES_OR_PERMISSIONS")) return alpha.reply("**I Don't Have ` MANAGE_ROLES_OR_PERMISSIONS ` Permission**");
+alpha.guild.roles.forEach(m => {
+m.delete();
+});// alpha codes
+alpha.reply("`تم حذف جميع الرتب بنجاح`")
+}// alpha codes
 });
-
 
 
 
